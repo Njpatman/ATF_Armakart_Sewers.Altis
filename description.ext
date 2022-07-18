@@ -1,0 +1,90 @@
+// Settings
+respawnOnStart = -1;
+respawnButton = 0;
+
+ATF_Version = "Armakart V2.5";
+onLoadName = Armakart;
+onLoadMission = Make sure to turn your music up and read your brief!;
+loadScreen = "Armakart_Main\Armakart_Loading.jpg"; // Preview picture
+
+class CfgMusic
+{
+	class Track_music
+	{
+	name = "Track_music";
+	sound[] = {"Armakart_Main\Armakart_Sounds\Armakart_Sounds_Music\music.ogg", 1, 1};
+	titles[] = {0,""};
+	};
+	
+	class Customization_Phase
+	{
+	name = "Customization_Phase";
+	sound[] = {"Armakart_Main\Armakart_Sounds\Armakart_Sounds_Music\Customization_Phase.ogg", 1, 1};
+	titles[] = {0,""};
+	};
+
+	class Intro
+	{
+	name = "Intro";
+	sound[] = {"Armakart_Main\Armakart_Sounds\Armakart_Sounds_Music\Intro.ogg", 1, 1};
+	titles[] = {0,""};
+	};	
+};
+
+class CfgSounds
+{
+
+	#include "Armakart_Main\Armakart_Sounds\Armakart_Sounds.hpp"
+
+};
+
+class CfgFunctions
+{
+
+   #include "Armakart_Main\Armakart_Server_Functions\Armakart_Server_Functions.hpp"
+
+   #include "Armakart_Main\Armakart_Client_Functions\Armakart_Client_Functions.hpp"
+   
+};
+
+//	Code to disable ACE nametags. Remember to uncomment.
+//	Also note that if there is already an ACE_settings header
+//	in your description.ext, place the ace_nametags class
+//	stuff inside there.
+
+class ACE_settings 
+{
+	class ace_nametags_showPlayerNames {
+		value = 0;
+		typeName = "SCALAR";
+		force = 1;
+	};
+	class ace_nametags_showVehicleCrewInfo {
+		value = 0;
+		typeName = "BOOL";
+		force = 1;
+	};
+	class ace_nametags_showNamesForAI {
+		value = 0;
+		typeName = "BOOL";
+		force = 1;
+	};
+};
+
+//UI Stuff, don't touch pls
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+#include "Armakart_Main\Armakart_UI_&_Textures\Defines.hpp"
+
+#include "Armakart_Main\Armakart_UI_&_Textures\Customization_Menu.hpp"
+
+#include "Armakart_Main\Armakart_UI_&_Textures\Voting_Menu.hpp"
+
+#include "Armakart_Main\Armakart_UI_&_Textures\Scoreboard.hpp"
+
+#include "Armakart_Main\Armakart_Params.hpp"
+
+class RscTitles
+{
+	#include "Armakart_Main\Armakart_UI_&_Textures\Player_UI.hpp"
+};
+/////////////////////////////////////////////////////////////////////////////////////////////////////
